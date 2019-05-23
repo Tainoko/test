@@ -233,11 +233,9 @@ function refreshData(scale) {
 		chart.data.labels.splice(removalRange.start, removalRange.count);
 	}
 
-/*
 	chart.update({
 		preservation: true
 	});
-*/
 }
 
 function stopDataRefreshTimer(scale) {
