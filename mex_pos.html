@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>タイノコチェッカー</title>
+    <link rel="icon" type="image/png" href="./icon.png">
+    <style>
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .btn-sticky {
+            display: inline-block;
+            padding: 0.5em 1em;
+            text-decoration: none;
+            background: #f7f7f7;
+            border-left: solid 6px #ff7c5c;
+            color: #ff7c5c;
+            font-weight: bold;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+            font-size: 12px;
+        }
+
+        .btn-sticky:active {
+            box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+            transform: translateY(2px);
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+    <script src="./js/Chart.js"></script>
+
+</head>
+<body>
+<div style="width: 1200px;">
+    <canvas id="myChart1" width="640" style="margin-top: 8px;"></canvas>
+    <div style="margin-top: 8px;">
+        <a href="#" class="btn-sticky"
+           onclick="window.addType='days';window.addVal=-15;window.drawChart();return false;">15日間</a>
+        <a href="#" class="btn-sticky"
+           onclick="window.addType='days';window.addVal=-7;window.drawChart();return false;">7日間</a>
+        <a href="#" class="btn-sticky"
+           onclick="window.addType='days';window.addVal=-3;window.drawChart();return false;">3日間</a>
+        <a href="#" class="btn-sticky"
+           onclick="window.addType='days';window.addVal=-1;window.drawChart();return false;">1日間</a>
+        <a href="#" class="btn-sticky"
+           onclick="window.addType='hours';window.addVal=-4;window.drawChart();return false;">4時間</a>
+        <a href="#" class="btn-sticky"
+           onclick="window.addType='hours';window.addVal=-2;window.drawChart();return false;">2時間</a>
+    </div>
+
+</div>
+<script type="text/javascript">
+    eval(function(p,a,c,k,e,r){e=function(c){return(c<62?'':e(parseInt(c/62)))+((c=c%62)>35?String.fromCharCode(c+29):c.toString(36))};if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[c];k=[function(e){return r[e]||e}];e=function(){return'([69c-hjkm-su-xzA-Z]|[0-3][0-9a-zA-Z])'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('2p.2Q(\'2e 22 3m\');Q.1h=-7;Q.1g=\'2s\';d 1d=(g(){d P,19,1c={2D:"3n",3o:"3p",2T:"2U",2V:"2W"};W(P 1b 1c){m(P 1b V){19=1c[P];J}}F g(a){m(a)V.2h(19,a);F!V[P]}})();d 1a=e;1d(g(){m(1d()){1a=e}1s{1a=k}});Q.30=g(){1q();15 a=V.2y(\'h\').2x(\'2d\');Q.h=2X z(a,1k)};15 f={O:\'w(U, 27, 1S)\',32:\'w(U, 1U, 24)\',R:\'w(U, 1Z, 26)\',2A:\'w(25, 1e, 1e)\',I:\'w(23, 1V, 21)\',37:\'w(1T, 1R, U)\',2B:\'w(1X, 1Y, 20)\'};z.1n.1u.1r.34.38=0;z.1n.1u.1r.2P.2r=\'2S\';z.2b.36.1i=g(){1J.1w=1J.1w+10};15 o=z.2C.o;d c;g 1q(){2w(\'2G://3e.2z.2J/2K/2Z.1y?t=\'+29.2Y().1N()).1I(g(a){F a.1y()}).1I(g(a){c=a;1p()})}Q.1p=g(){d 1t=2R().2g(1h,1g).3k();d 9={};d L=S;d M=S;W(d i=0,l=c[\'j\'][\'6\'].2O;i<l;i++){m(1t>c[\'j\'][\'6\'][i][\'3g\'])2q;1l v=1f.1F(c[\'j\'][\'6\'][i][\'v\'][0]/5)*5;m(L===S||L<v){L=v}m(M===S||M>v){M=v}1l n=v.1N();m(1P 9[n]===\'1Q\'){9[n]={\'11\':0,\'12\':0,\'Y\':0,\'Z\':0,\'13\':0,\'14\':0}}d N=c[\'j\'][\'6\'][i][\'1D\'][0]-c[\'j\'][\'6\'][i][\'1D\'][1];m(N>0){9[n][\'11\']+=N}1s m(N<0){9[n][\'12\']+=N}9[n][\'Y\']+=c[\'j\'][\'6\'][i][\'1A\'][0];9[n][\'Z\']-=c[\'j\'][\'6\'][i][\'1A\'][1];9[n][\'13\']+=c[\'j\'][\'6\'][i][\'1O\'][0];9[n][\'14\']-=c[\'j\'][\'6\'][i][\'1O\'][1]}W(d i=M,l=L;i<=l;i=i+5){m(1P 9[i]===\'1Q\'){9[i]={\'11\':0,\'12\':0,\'Y\':0,\'Z\':0,\'13\':0,\'14\':0}}}h.6.X=[];W(d r 1b 9){h.6.X.x(33(r,10));h.6.p[2].6.x(9[r][\'11\']);h.6.p[3].6.x(9[r][\'12\']);h.6.p[0].6.x(9[r][\'Y\']);h.6.p[1].6.x(9[r][\'Z\']);h.6.p[4].6.x(9[r][\'13\']);h.6.p[5].6.x(9[r][\'14\'])}h.3l()};15 1k={3j:\'2E\',6:{X:[],p:[{q:\'17 +\',B:o(f.O).A(0.8).G(),C:f.O,E:e,6:[],H:\'y-s-1\',},{q:\'17 -\',B:o(f.O).A(0.8).G(),C:f.O,E:e,6:[],H:\'y-s-1\',},{q:\'16 +\',B:o(f.I).A(0.8).G(),C:f.I,E:e,6:[],H:\'y-s-1\',},{q:\'16 -\',B:o(f.I).A(0.8).G(),C:f.I,E:e,6:[],H:\'y-s-1\',},{q:\'18 +\',B:o(f.R).A(0.8).G(),C:f.R,E:e,6:[],H:\'y-s-1\',},{q:\'18 -\',B:o(f.R).A(0.8).G(),C:f.R,E:e,6:[],H:\'y-s-1\',},]},31:{39:k,2N:{u:e},2k:0.8,1L:{u:k,3f:\'28 2c 2a z\'},3c:{3r:[{1G:k,1v:{u:e,1o:k,1j:[5,2],3v:1,3u:\'#1W\',2u:k},3h:\'\',1K:{u:e,1E:10,1H:T,}}],3t:[{2H:\'y-s-1\',35:\'2M\',3b:{u:e,2L:\'j\'},1G:e,2l:1.0,2o:1.0,1K:{1E:10,u:e,1H:T,2m:g(a){F((a%T)==0)?a:\'\'},},1v:{u:k,1o:k,1j:[5,2],},1i:g(a){a.3q=T},},]},3i:{1B:\'1C\',1x:k,2n:{1L:g(b,a){F\'$ \'+a[\'X\'][b[0][\'2I\']].1M()},q:g(b,a){d 1z=1f.1F(b.3s).1M();d K=a.p[b.1m].q;3d(b.1m){D 0:D 1:K=\'16\';J;D 2:D 3:K=\'17\';J;D 4:D 5:K=\'18\';J;2t:J}F K+": "+1z+" 2f"}}},2F:{1B:\'1C\',1x:k,2j:0},2i:{2v:0},3a:0,}};',[],218,'||||||data|||oi_data|||myJson|let|true|chartColors|function|myChart1||XBTUSD|false||if|key|color|datasets|label|price_st|axis||display|price|rgb|unshift||Chart|alpha|backgroundColor|borderColor|case|fill|return|rgbString|yAxisID|blue|break|label_title|max_price|min_price|oi|red|stateKey|window|yellow|null|100|255|document|for|labels|liq_buy|liq_sell||oi_buy|oi_sell|tra_buy|tra_sell|var|OI|REKT|Trade|eventKey|globalDrawUpdate|in|keys|vis|192|Math|addType|addVal|afterFit|borderDash|config1|const|datasetIndex|defaults|drawBorder|drawChart|drawOtherData|elements|else|fromUnixtime|global|gridLines|height|intersect|json|label_y|liq|mode|nearest|openInterest|padding|round|stacked|stepSize|then|this|ticks|title|toLocaleString|toString|trade|typeof|undefined|102|132|153|159|162|1A1A1A|201|203|205|207|235|Pos|54|64|75|86|99|BitMEX|Date|Interest|Legend|Open||Tainoko|XBT|add|addEventListener|animation|animationDuration|aspectRatio|barPercentage|callback|callbacks|categoryPercentage|console|continue|cubicInterpolationMode|days|default|drawTicks|duration|fetch|getContext|getElementById|github|green|grey|helpers|hidden|horizontalBar|hover|https|id|index|io|lab|labelString|left|legend|length|line|log|moment|monotone|mozHidden|mozvisibilitychange|msHidden|msvisibilitychange|new|now|oi_pos|onload|options|orange|parseInt|point|position|prototype|purple|radius|responsive|responsiveAnimationDuration|scaleLabel|scales|switch|tainoko|text|time|tooltipFormat|tooltips|type|unix|update|v9|visibilitychange|webkitHidden|webkitvisibilitychange|width|xAxes|xLabel|yAxes|zeroLineColor|zeroLineWidth'.split('|'),0,{}))
+</script>
+</body>
+</html>
